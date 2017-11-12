@@ -1,0 +1,17 @@
+[Unit]
+Description=Robinet Disco API
+After=syslog.target
+After=network.target
+After=disco-server.target
+
+[Service]
+Type=simple
+User=mikedd
+Group=users
+WorkingDirectory=/home/mikedd/disco-api
+ExecStart=/home/mikedd/disco-api/startup.sh
+Environment=USER=mikedd HOME=/home/mikedd
+
+[Install]
+WantedBy=multi-user.target
+Alias=disco-api.service
