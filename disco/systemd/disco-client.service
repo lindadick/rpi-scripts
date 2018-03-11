@@ -1,8 +1,7 @@
 [Unit]
 Description=Robinet Disco Client
-After=syslog.target
-After=network.target
-After=disco-server.target
+After=syslog.target network.target disco-server.target
+Wants=disco-server.target
 
 [Service]
 Type=simple
